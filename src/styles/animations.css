@@ -1,0 +1,69 @@
+/* Background particle animation keyframes */
+@keyframes float {
+  0% {
+    transform: translateY(0) translateX(0);
+  }
+  50% {
+    transform: translateY(-20px) translateX(10px);
+  }
+  100% {
+    transform: translateY(0) translateX(0);
+  }
+}
+
+@keyframes pulse {
+  0%, 100% {
+    opacity: 0.5;
+  }
+  50% {
+    opacity: 1;
+  }
+}
+
+/* Particle container styling */
+.particles-container {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+.particles-container::before,
+.particles-container::after {
+  content: '';
+  position: absolute;
+  width: 300px;
+  height: 300px;
+  border-radius: 50%;
+  opacity: 0.2;
+  filter: blur(60px);
+}
+
+.particles-container::before {
+  background: linear-gradient(to right, #7c3aed, #3b82f6);
+  top: 20%;
+  left: 20%;
+  animation: float 15s ease-in-out infinite, pulse 8s ease-in-out infinite;
+}
+
+.particles-container::after {
+  background: linear-gradient(to right, #0ea5e9, #06b6d4);
+  bottom: 20%;
+  right: 20%;
+  animation: float 18s ease-in-out infinite reverse, pulse 10s ease-in-out 2s infinite;
+}
+
+/* Timeline animation */
+.timeline {
+  transition: height 2s ease-out;
+}
+
+.progress-active {
+  height: 100% !important;
+}
+
+/* Card animation */
+.animate-in {
+  opacity: 1 !important;
+  transform: translateY(0) !important;
+}
